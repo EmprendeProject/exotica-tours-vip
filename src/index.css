@@ -1,0 +1,125 @@
+@import 'tailwindcss';
+
+/* ---------------------------------------------------------------
+   Design tokens — Exótica Tours VIP (light editorial + navy/gold)
+---------------------------------------------------------------- */
+@theme {
+  --font-serif: 'Playfair Display', ui-serif, Georgia, serif;
+  --font-sans: 'Manrope', ui-sans-serif, system-ui, sans-serif;
+
+  /* Neutrals (light) */
+  --color-ink: #1b1c19;
+  --color-cream: #fbf9f4;
+  --color-sand: #f5f3ee;
+  --color-sand-deep: #efece6;
+  --color-line: #e2d9c8;
+  --color-muted: #43474b;
+  --color-slate: #545f68;
+
+  /* Gold scale */
+  --color-gold: #775a00; /* AA sobre fondos claros */
+  --color-gold-dark: #5a4300;
+  --color-gold-mid: #b88e28;
+  --color-gold-light: #eec152; /* solo sobre fondos oscuros */
+  --color-gold-pale: #ffdf9a;
+  --color-tan: #d6c5a3;
+
+  /* Navy (dark sections) */
+  --color-navy: #0b1c26;
+  --color-navy-soft: #102633;
+  --color-night: #081219;
+  --color-mist: #c3c7cb;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  body {
+    @apply bg-cream font-sans text-ink antialiased;
+    overflow-x: clip;
+  }
+
+  ::selection {
+    background: #fdce5e;
+    color: var(--color-ink);
+  }
+
+  /* El header es fijo: evita que tape los títulos al navegar por anclas */
+  section[id] {
+    scroll-margin-top: 5rem;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-gold-mid);
+    outline-offset: 3px;
+  }
+}
+
+@layer components {
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    line-height: 1;
+    user-select: none;
+  }
+  .icon-fill {
+    font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+
+}
+
+@utility eyebrow {
+  @apply font-sans text-[11px] leading-4 font-semibold tracking-[0.3em] uppercase;
+}
+
+@utility btn {
+  @apply inline-flex cursor-pointer items-center justify-center gap-2 px-8 py-4 text-center text-[11px] font-semibold tracking-[0.2em] uppercase transition-all duration-300;
+}
+@utility btn-primary {
+  @apply btn bg-gold text-white hover:bg-gold-dark hover:shadow-xl active:scale-[0.98];
+}
+@utility btn-outline {
+  @apply btn border-2 border-ink bg-white/60 text-ink backdrop-blur-sm hover:bg-ink hover:text-white;
+}
+@utility btn-gold {
+  @apply btn bg-gold-light text-navy hover:bg-gold-pale hover:shadow-lg;
+}
+@utility btn-ghost-gold {
+  @apply btn border border-gold-light text-gold-light hover:bg-gold-light hover:text-navy;
+}
+
+@utility field {
+  @apply w-full border border-line bg-cream px-4 py-3 text-sm text-ink transition-colors placeholder:text-slate/70 focus:border-gold focus:ring-1 focus:ring-gold focus:outline-none;
+}
+@utility field-label {
+  @apply block text-xs font-semibold tracking-widest text-ink uppercase;
+}
+
+/* Scrollbar sutil */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-sand);
+}
+::-webkit-scrollbar-thumb {
+  background: #cbbf9f;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gold-mid);
+}

@@ -170,7 +170,7 @@ export default function Carousel3D({ experiences = CAROUSEL_EXPERIENCES }) {
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
       aria-label="Carrusel 3D de experiencias de lujo"
-      className="relative flex w-full flex-col items-center justify-center overflow-hidden bg-night pt-20 pb-6 outline-none select-none"
+      className="relative flex w-full flex-col items-center justify-center overflow-hidden bg-cream pt-20 pb-6 outline-none select-none"
     >
       {/* 1. Fondo Dinámico Desenfocado con Crossfade Smooth */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
@@ -181,24 +181,24 @@ export default function Carousel3D({ experiences = CAROUSEL_EXPERIENCES }) {
             alt=""
             aria-hidden="true"
             initial={{ opacity: 0, scale: 1.08 }}
-            animate={{ opacity: 0.3, scale: 1 }}
+            animate={{ opacity: 0.15, scale: 1 }}
             exit={{ opacity: 0, scale: 1.04 }}
             transition={{ duration: 1.1, ease: 'easeInOut' }}
-            className="size-full object-cover filter blur-3xl brightness-[0.55] saturate-[1.2]"
+            className="size-full object-cover filter blur-3xl saturate-50"
           />
         </AnimatePresence>
-        {/* Viñeta lateral muy sutil — sin aplastamiento vertical */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,rgba(10,10,18,0.55)_100%)]" />
+        {/* Viñeta lateral muy sutil en tono beige */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,rgba(251,249,244,0.85)_100%)]" />
       </div>
 
       {/* 2. Líneas Arquitectónicas Horizontales y Verticales */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 z-10 flex justify-between px-5 opacity-20 md:px-16"
+        className="pointer-events-none absolute inset-0 z-10 flex justify-between px-5 opacity-30 md:px-16"
       >
-        <div className="h-full w-px bg-gradient-to-b from-transparent via-gold-light to-transparent" />
-        <div className="hidden h-full w-px bg-gradient-to-b from-transparent via-slate to-transparent md:block" />
-        <div className="h-full w-px bg-gradient-to-b from-transparent via-gold-light to-transparent" />
+        <div className="h-full w-px bg-gradient-to-b from-transparent via-gold to-transparent" />
+        <div className="hidden h-full w-px bg-gradient-to-b from-transparent via-line to-transparent md:block" />
+        <div className="h-full w-px bg-gradient-to-b from-transparent via-gold to-transparent" />
       </div>
 
       {/* 3. Escenario 3D Coverflow Container */}
@@ -237,11 +237,11 @@ export default function Carousel3D({ experiences = CAROUSEL_EXPERIENCES }) {
                 }}
                 className={`absolute cursor-pointer transition-shadow duration-300 ${
                   isCenter
-                    ? 'ring-1 ring-gold-light/50 shadow-[0_28px_70px_rgba(0,0,0,0.9)]'
-                    : 'shadow-[0_12px_40px_rgba(0,0,0,0.65)] hover:brightness-100'
+                    ? 'ring-1 ring-gold/40 shadow-[0_28px_50px_rgba(119,90,0,0.15)]'
+                    : 'shadow-[0_12px_30px_rgba(0,0,0,0.1)] hover:brightness-100'
                 }`}
               >
-                <div className="relative h-[320px] w-[260px] overflow-hidden bg-navy sm:h-[390px] sm:w-[320px] md:h-[440px] md:w-[370px]">
+                <div className="relative h-[320px] w-[260px] overflow-hidden bg-sand sm:h-[390px] sm:w-[320px] md:h-[440px] md:w-[370px]">
                   <img
                     src={exp.image}
                     alt={exp.title}
@@ -249,8 +249,8 @@ export default function Carousel3D({ experiences = CAROUSEL_EXPERIENCES }) {
                     decoding="async"
                     className="size-full object-cover object-center transition-transform duration-700 hover:scale-[1.03]"
                   />
-                  {/* Overlay en degradado solo en la parte inferior */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                  {/* Overlay en degradado claro para asegurar legibilidad del texto oscuro sobre la imagen */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-cream/90 via-cream/40 to-transparent" />
                 </div>
               </motion.div>
             )
@@ -266,23 +266,23 @@ export default function Carousel3D({ experiences = CAROUSEL_EXPERIENCES }) {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -18 }}
               transition={{ duration: 0.45, ease: 'easeOut' }}
-              className="flex max-w-3xl flex-col items-center drop-shadow-[0_4px_12px_rgba(0,0,0,0.85)]"
+              className="flex max-w-3xl flex-col items-center drop-shadow-sm"
             >
               {/* Badge Ubicación */}
-              <span className="eyebrow mb-3 tracking-[0.3em] text-gold-light text-shadow-sm">
+              <span className="eyebrow mb-3 tracking-[0.3em] text-gold">
                 {currentExp.location}
               </span>
 
               {/* Título Principal Grande en Mayúsculas */}
-              <h1 className="font-serif text-3xl font-normal tracking-wide text-white uppercase sm:text-5xl md:text-6xl lg:text-[64px] leading-tight">
+              <h1 className="font-serif text-3xl font-normal tracking-wide text-ink uppercase sm:text-5xl md:text-6xl lg:text-[64px] leading-tight">
                 {currentExp.title}
               </h1>
 
               {/* Subtítulo y Descripción */}
-              <p className="mt-3 font-serif italic text-gold-pale text-lg sm:text-xl md:text-2xl">
+              <p className="mt-3 font-serif italic text-gold-dark text-lg sm:text-xl md:text-2xl">
                 {currentExp.subtitle}
               </p>
-              <p className="mt-3 max-w-xl text-xs font-light tracking-wide text-mist/90 sm:text-sm md:text-base leading-relaxed hidden sm:block">
+              <p className="mt-3 max-w-xl text-xs font-light tracking-wide text-slate sm:text-sm md:text-base leading-relaxed hidden sm:block">
                 {currentExp.description}
               </p>
 
@@ -290,13 +290,13 @@ export default function Carousel3D({ experiences = CAROUSEL_EXPERIENCES }) {
               <div className="pointer-events-auto mt-6 flex gap-4">
                 <a
                   href={currentExp.href}
-                  className="btn-gold !px-7 !py-3 shadow-2xl backdrop-blur-md transition-transform duration-300 hover:scale-105"
+                  className="btn-primary !px-7 !py-3 shadow-xl backdrop-blur-md transition-transform duration-300 hover:scale-105"
                 >
                   Explorar experiencia
                 </a>
                 <a
                   href="#contacto"
-                  className="btn-ghost-gold !px-7 !py-3 backdrop-blur-md hidden md:inline-flex"
+                  className="btn-outline !px-7 !py-3 backdrop-blur-md hidden md:inline-flex"
                 >
                   Diseñar mi viaje
                 </a>
@@ -310,7 +310,7 @@ export default function Carousel3D({ experiences = CAROUSEL_EXPERIENCES }) {
           type="button"
           onClick={handlePrev}
           aria-label="Experiencia anterior"
-          className="group absolute left-3 sm:left-6 z-50 flex size-11 items-center justify-center rounded-full border border-gold-light/40 bg-navy/70 text-gold-light backdrop-blur-md transition-all duration-300 hover:bg-gold-light hover:text-navy active:scale-95"
+          className="group absolute left-3 sm:left-6 z-50 flex size-11 items-center justify-center rounded-full border border-gold/30 bg-white/80 text-gold backdrop-blur-md transition-all duration-300 hover:bg-gold hover:text-white hover:border-gold active:scale-95 shadow-sm"
         >
           <ChevronLeft className="size-6 transition-transform group-hover:-translate-x-0.5" />
         </button>
@@ -319,7 +319,7 @@ export default function Carousel3D({ experiences = CAROUSEL_EXPERIENCES }) {
           type="button"
           onClick={handleNext}
           aria-label="Siguiente experiencia"
-          className="group absolute right-3 sm:right-6 z-50 flex size-11 items-center justify-center rounded-full border border-gold-light/40 bg-navy/70 text-gold-light backdrop-blur-md transition-all duration-300 hover:bg-gold-light hover:text-navy active:scale-95"
+          className="group absolute right-3 sm:right-6 z-50 flex size-11 items-center justify-center rounded-full border border-gold/30 bg-white/80 text-gold backdrop-blur-md transition-all duration-300 hover:bg-gold hover:text-white hover:border-gold active:scale-95 shadow-sm"
         >
           <ChevronRight className="size-6 transition-transform group-hover:translate-x-0.5" />
         </button>
@@ -335,8 +335,8 @@ export default function Carousel3D({ experiences = CAROUSEL_EXPERIENCES }) {
             aria-label={`Ir a la diapositiva ${idx + 1}`}
             className={`h-1.5 transition-all duration-300 rounded-full cursor-pointer ${
               idx === activeIndex
-                ? 'w-8 bg-gold-light'
-                : 'w-2 bg-gold-light/30 hover:bg-gold-light/60'
+                ? 'w-8 bg-gold'
+                : 'w-2 bg-gold/30 hover:bg-gold/60'
             }`}
           />
         ))}

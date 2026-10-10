@@ -88,8 +88,8 @@ export default function Carousel3D({ experiences = CAROUSEL_EXPERIENCES }) {
         ? window.innerWidth >= 640 && window.innerWidth < 1024
         : false
 
-    // Escalado de distancias X según pantalla
-    const xStep = isMobile ? 85 : isTablet ? 130 : 190
+    // Escalado de distancias X según pantalla (ajustado para tarjetas más anchas)
+    const xStep = isMobile ? 110 : isTablet ? 170 : 240
 
     if (offset === 0) {
       return {
@@ -170,7 +170,7 @@ export default function Carousel3D({ experiences = CAROUSEL_EXPERIENCES }) {
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
       aria-label="Carrusel 3D de experiencias de lujo"
-      className="relative flex min-h-svh w-full flex-col items-center justify-center overflow-hidden bg-night pt-24 pb-16 outline-none select-none"
+      className="relative flex w-full flex-col items-center justify-center overflow-hidden bg-night pt-20 pb-6 outline-none select-none"
     >
       {/* 1. Fondo Dinámico Desenfocado con Crossfade Smooth */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
@@ -180,16 +180,15 @@ export default function Carousel3D({ experiences = CAROUSEL_EXPERIENCES }) {
             src={currentExp.image}
             alt=""
             aria-hidden="true"
-            initial={{ opacity: 0, scale: 1.1 }}
-            animate={{ opacity: 0.45, scale: 1 }}
-            exit={{ opacity: 0, scale: 1.05 }}
-            transition={{ duration: 0.85, ease: 'easeInOut' }}
-            className="size-full object-cover filter blur-2xl contrast-110 brightness-[0.45]"
+            initial={{ opacity: 0, scale: 1.08 }}
+            animate={{ opacity: 0.3, scale: 1 }}
+            exit={{ opacity: 0, scale: 1.04 }}
+            transition={{ duration: 1.1, ease: 'easeInOut' }}
+            className="size-full object-cover filter blur-3xl brightness-[0.55] saturate-[1.2]"
           />
         </AnimatePresence>
-        {/* Degradados ambientales de niebla y viñeta */}
-        <div className="absolute inset-0 bg-gradient-to-t from-cream via-night/60 to-night/80" />
-        <div className="absolute inset-0 bg-gradient-to-b from-cream/40 via-transparent to-cream" />
+        {/* Viñeta lateral muy sutil — sin aplastamiento vertical */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,rgba(10,10,18,0.55)_100%)]" />
       </div>
 
       {/* 2. Líneas Arquitectónicas Horizontales y Verticales */}
@@ -203,7 +202,7 @@ export default function Carousel3D({ experiences = CAROUSEL_EXPERIENCES }) {
       </div>
 
       {/* 3. Escenario 3D Coverflow Container */}
-      <div className="relative z-20 my-auto flex h-[460px] w-full max-w-6xl items-center justify-center sm:h-[520px] md:h-[560px]">
+      <div className="relative z-20 my-auto flex h-[400px] w-full max-w-7xl items-center justify-center sm:h-[460px] md:h-[520px]">
         <div
           className="relative flex size-full items-center justify-center"
           style={{ perspective: '1200px', transformStyle: 'preserve-3d' }}
@@ -236,22 +235,22 @@ export default function Carousel3D({ experiences = CAROUSEL_EXPERIENCES }) {
                   zIndex: style.zIndex,
                   transformStyle: 'preserve-3d',
                 }}
-                className={`absolute cursor-pointer rounded-lg transition-shadow duration-300 ${
+                className={`absolute cursor-pointer transition-shadow duration-300 ${
                   isCenter
-                    ? 'ring-1 ring-gold-light/60 shadow-[0_20px_50px_rgba(0,0,0,0.85)]'
-                    : 'shadow-[0_10px_30px_rgba(0,0,0,0.6)] hover:brightness-100'
+                    ? 'ring-1 ring-gold-light/50 shadow-[0_28px_70px_rgba(0,0,0,0.9)]'
+                    : 'shadow-[0_12px_40px_rgba(0,0,0,0.65)] hover:brightness-100'
                 }`}
               >
-                <div className="relative h-[360px] w-[220px] overflow-hidden rounded-lg border border-gold-light/20 bg-navy sm:h-[430px] sm:w-[260px] md:h-[470px] md:w-[290px]">
+                <div className="relative h-[320px] w-[260px] overflow-hidden bg-navy sm:h-[390px] sm:w-[320px] md:h-[440px] md:w-[370px]">
                   <img
                     src={exp.image}
                     alt={exp.title}
                     loading={idx === 0 ? 'eager' : 'lazy'}
                     decoding="async"
-                    className="size-full object-cover object-center transition-transform duration-700 hover:scale-105"
+                    className="size-full object-cover object-center transition-transform duration-700 hover:scale-[1.03]"
                   />
-                  {/* Overlay sutil para graduar contraste */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-navy/90 via-transparent to-black/20" />
+                  {/* Overlay en degradado solo en la parte inferior */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                 </div>
               </motion.div>
             )

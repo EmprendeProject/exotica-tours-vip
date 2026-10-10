@@ -13,6 +13,7 @@ import SafariSpotlight from './components/SafariSpotlight'
 import Services from './components/Services'
 import Testimonials from './components/Testimonials'
 import Tours from './components/Tours'
+import VideoSection from './components/VideoSection'
 
 export default function App() {
   const [selectedTour, setSelectedTour] = useState(null)
@@ -30,6 +31,7 @@ export default function App() {
       <Header />
       <main id="main-content">
         <Hero />
+        <VideoSection />
         <Intro />
         <Destinations />
         <Tours onRequest={handleTourRequest} />

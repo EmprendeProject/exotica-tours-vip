@@ -4,6 +4,16 @@
  * servicios, testimonios) vive aquí para no tener que tocar los componentes.
  */
 
+// Importaciones de fotos reales de Dubai
+import dubai1 from '../assets/dubai fotos/dubai 1.avif'
+import dubai2 from '../assets/dubai fotos/dubai 2.jpeg'
+import dubai3 from '../assets/dubai fotos/dubai 3.jpg'
+import dubai4 from '../assets/dubai fotos/dubai 4.jpeg'
+import dubai5 from '../assets/dubai fotos/dubai 5.jpeg'
+import dubai6 from '../assets/dubai fotos/dubai 6.jpeg'
+import dubai7 from '../assets/dubai fotos/dubai 7.webp'
+import dubai8 from '../assets/dubai fotos/dubai 8.webp'
+
 const IMG = 'https://lh3.googleusercontent.com/aida-public/'
 
 /* ------------------------------------------------------------------ */
@@ -36,24 +46,35 @@ export const NAV_LINKS = [
 ]
 
 /* ------------------------------------------------------------------ */
-/* Imágenes                                                            */
-/* TODO(cliente): son imágenes provisionales del mockup. Sustituir por */
-/* fotografías propias (idealmente en /public, en WebP/AVIF).          */
+/* Imágenes — Fotos reales de Dubái                                    */
 /* ------------------------------------------------------------------ */
 export const IMAGES = {
-  hero: `${IMG}AB6AXuDu7pOPkmREHkRVctX7NPtYUHNe8hSqRK6543X6JRarfMqi4Fs8tIAqRJrA_XaYtjMC1tXmRp-fleeO5tKzoIIMfrokiMNnJtupirkH1EhrMqtKsSpnQI54_bkPJz4kKlLFKT63rp5RO-vlsHxUYvmAmtELoxwXvDch4anWMjTWrSmnVXqbKXvLMaq6_EKj6NhnjXgXYe7OD0vu8sJviZpFgNy7jeCV2-OgGqXtPiWPaGXzqTGplH46Og`,
-  desertLounge: `${IMG}AB6AXuByfUXlxB97xFPXtEEL_TIq_UWNDaMkI_44tKhE-uroERHfmFXcacMGKpXclg7t60tZxiO_orHGs9OoqsscmsesAanji31pFNzm-cD4nc4XoWKbaKxJrkZzpODIX_sET443YeNds_PGNCuR-xWtruhNPmoiY-C_rW6e1_BRyjpGdfcHMbQmjLIrXBq_HntejwsIP-cnJU2dMHXXqYwlsc18gI1W_b51fdt9Ulb_xiiLVvgpodJO5ZNsUw`,
-  dubaiMarina: `${IMG}AB6AXuBSWOtzee39Zk61KA7MpplLWxHT2tv-Lw_dysuHzbyAxHrv2ec1zkGEca1e0z8gEeUFX2od8Ktj67xa3V0zcKurvso8S1nkYLpYBJG2TSwoPSgAoaGsTWm26_cKRThmjg1PAIgqvuWnuHJLCYM48KTbv06kSeNPyhHCDcOL9jhsHufrniV01sxaYoUHA_1EOvgbKVMIfGB4wGu4N8xf22LVHEPEQp7K4vZg_Ic-QNetVN2ky8yFAImpKw`,
-  grandMosque: `${IMG}AB6AXuAq4BStl73dZ9j5gNo3CKcAomAFVnEjDlJh__Le1cvdM-PaP-VdLzpSAKP96Qaa5Iikz9XIcCb1esLtXjTTRlbZ8rdfsUZqJZ9_ISaF6n_WVyokRg553yI51N752wVPZOwUQEA11yTGM3pkbMU_rZhVE0kWP4ZS3HRe8-wJSpRtiLoO15OFgZ6KvYGFR6xdtZ3aJVe3i0dku2CPAU9e7R1LucAreWPp5Xf1R9Ki4k4038VAWqTzjWxiiQ`,
-  qatar: `${IMG}AB6AXuBNKFa2nfsluVYwDEveXqp7AtncpGKz827-qaVbwxWTtRQca4FHl6XBagsaa5JUhjM3U7PY0vGrlqcnBeTKaK6vZmVg_Zem6L1WhYLCCQu773w3B2eAPs1VqEFmN8oAttff22nFody_I7rldOHOhPAX-p2_8qHFbsBJCVctFuDq9ibwxW7cpY0z75Vf7tkGmLlIRyqbseQymwjXiZFNsICbLfF7OEYnyGEXGoLU4bWHHwX-XuNn0-JA0A`,
-  oman: `${IMG}AB6AXuBuWNQ3CF0cYOk8ApBEEa7erj3xpZ1sn5T5pm1kvotiaHKdCHjb3Dy4PBsCJzWMK3wjDuj1cJiwZYSADCc86DBllHxY79lYlD7nKjPoh9TH_j9MyHQ1oVd-vmu6UjQKoMrJr-556DYpZQyJOZBzZCpo5YsTrUe2xDaIHvRhlfUFiJkN3V0fgjXM3ds9gp7rEYnvBx9mWEWfcib4nas12DvzHivcZuxds2zm0OVOrAaZagRgw93kpAsgQQ`,
-  egypt: `${IMG}AB6AXuAmyN2x2ffcTpgDrImPvNBp4Qk0yMElZPPJLHXCJFz8fDCPO7BEI3yyV_rhJ67waQFPN2uJyA3vuyWUZYfwYfgHNUwM5U4V1Xlu7aLuchW53Ssc5zAaGlI66cDnRojtsehjjIsRVpR4y4GGe7JMg1drKdwoqekf91mNTLfKP4M5c5GUK2CFia6-Ix5PEMPuFgbwUAoAEoiAd7eEsCctxPH25HdB2WKSgyndzdGaJIaBlLfIWYv4pi7CUQ`,
-  desertSafari: `${IMG}AB6AXuDMFj4N1N1jHyMA4hI_4YxJXErtmTRHD3BqJD551hXN0unZj48MqynPSs1L1YX0Eg_vXGdgKK5u1tym8atCreoS9K14m4Tx-wjZgzCSGjA-3xeeFui3-vZPIHdVXPjLfhB0EV83HOQjzEUN0QyyAtBqyVbnhWAB81y-fZ2rKK_sZjrZg-i_m5uG8NXzkmuhoAzf7XwoPDTJCTixeEQRbY1GB0h6CcfbdC7ABMocWruXbtnsASTgbtjosw`,
-  yacht: `${IMG}AB6AXuAOQ7RgpiU_z5fWDcmhF7u20uzUeBI3xm2oWRxf5dS3Gt1Tmdzy1Z7CE0nsYVywdBnzwRoAz00p_rgKvyM4cewIPlwEIg22BvUAe-yfNjfWHBata2F5cwdzS1JPKZiT_wAjiV6HAL9GqNpE4f61MuH0MIK4ptDCBKZwxJbMHIazhfW8fi6cS6C4tbJsNXVRGXzB32TzSUtaXof1GLvIqtIm9EBSfspoklNRY8oqxGXeEc3xBeHwtVuIww`,
-  louvre: `${IMG}AB6AXuBkTnoKBlZa4TagAYZqm_YeooKgfF7oIamlHHPWAcuJ627wonCIlYgDogRlPrVsai0KRPCpJY0qkDdQRaSPd43-L9kgGs7QK4GdDu_grzsDEw5SquA_FTImtBgEPRQbmylT_SmHkGonEUqYvkSpTBwNUW26j3Q_fk_-2016wNMhaUuLlZy1Y9mQEF8XHHFTB0zkC-GgK2cO-eifujhqUzdLQ-7Am3MltD9CZPJzcZ6QYXekAu6_137HeA`,
-  emptyQuarter: `${IMG}AB6AXuA_KI3GxhHk8eOR93Fr-alxwuaYQSFQWiN88_BpgKgM0qSURDJXTIdTnLQX1yzTqudHg-lfewt1GN2orTzfnhUmKYWaz4qwgodag2mB2RqxlGrciwewKJy8AGS146hHyspm2wvloLSXmQQZbEsvQkqcq8ibJM1PnA7Vpan17mpgJrgQI8nR9rNf020K7MikarbmupGr-8AMl9INserEDrpn0JO1qMTr-9VYCIZ15xIMd4oMzlHqR9NlKw`,
-  privateJet: `${IMG}AB6AXuAFMDAzPE4C1AaaNFRGYeCvzqBkNH9i3EZ9JCl8CuKkftvx2djjzIQT72xOkicW9ICXHaSCNTbDQ1vIOVLTtbrWSoZ7Pn4lxLmqQWEjYrr28v18_Tc_IT84e96l37GzJmHsOFl0TMEL2OCWqtbsB-mBEbBhSvVC-AuP1qCZVCjygGJKrFZQ9Zl39Rp0Wx5R-U4D-uL-ntv3DtrEpwHK3tPP2MR7knaAjkUDDMVY7DvYjPiBB-Ftb9kUug`,
-  yasMarina: `${IMG}AB6AXuApDiNpIU5cWacKYNNIOm7NyIUta6ANOvtNwOLsCpyBUCada4-JGQhdab8UbolZzxF6P5r56_rm3W1tMaS-Cg1-BPWeviHgpLqzsaV0z524LXdW4zgZ8hVmqv7IfpjzXnn0i8ssUhLWzx7OVougdtnnhQmsDhQw15ihecDNWvImZPLYxypjP0ErO0v8jz8AQFSNnvjopOvlyxprkdGKK1Eg4w7qK6VluTxsuVAUNzt5hlzgnCtebIv6QA`,
+  // dubai 2 → Burj Khalifa & Downtown Dubai (hero / Dubai principal)
+  hero: dubai2,
+  // dubai 4 → Camellos en el desierto al atardecer (safari/desert)
+  desertLounge: dubai4,
+  // dubai 2 → Burj Khalifa skyline (Dubai Marina / Dubai general)
+  dubaiMarina: dubai2,
+  // dubai 6 → Dubai Frame vista aérea (Abu Dhabi / monumentos)
+  grandMosque: dubai6,
+  // dubai 5 → Pareja en playa con Burj Al Arab (Qatar / lujo costero)
+  qatar: dubai5,
+  // dubai 1 → foto alternativa de Dubai (Oman / paisaje)
+  oman: dubai1,
+  // dubai 3 → Acuario submarino familia (Egipto & Turquía / experiencias)
+  egypt: dubai3,
+  // dubai 4 → Camellos al atardecer (safari en el desierto)
+  desertSafari: dubai4,
+  // dubai 7 → Mujer en jet ski frente a Burj Al Arab (yate / mar)
+  yacht: dubai7,
+  // dubai 6 → Dubai Frame (Louvre Abu Dhabi / cultural)
+  louvre: dubai6,
+  // dubai 4 → Desierto camellos (Rub al-Khali / Empty Quarter)
+  emptyQuarter: dubai4,
+  // dubai 8 → Hombre en jet ski Burj Al Arab (jet privado / premium)
+  privateJet: dubai8,
+  // dubai 5 → Burj Al Arab playa (Yas Marina / resort)
+  yasMarina: dubai5,
   // TODO(cliente): retratos generados para el mockup — usar fotos reales de Nini y Melany.
   nini: `${IMG}AB6AXuC9SS0jec2ipL8JFnHFPXY_zpCGgbFFfV6V2dMkyU3SayM6ugJWTCxO0pSCLTDFjE6UoB7snrnLympofbw2Jf2mYMH1TDe4zi-s29CGV_FhS53kKZCCBHfIDLiBR92uCAgiqLhjCdBBPHPE7TyvxzUbePUwFweIFKtJI2OYq0UCed3P_Zdc9suvCYqm14RRoAAn_LBffikVEtYpN5cHFZVesShaxT4Hq2ASTD35KVebld4I0KTbBn8EJQ`,
   melany: `${IMG}AB6AXuBhOhXVFWY1YmAahM7291W_TvJil1fyzNPhV4oAMSjpUNf7ebaEs_nn38bvy-m8f5CyzgH4deZrAnArYiooI5yfcEQuOt-pTw81z_OdoVjkTMBktm_Teri_njKrzWr3DBjwX362TqwLfhuklo01wc633cv1zYvsIskDpPNgYnPKBXI0_zGa2veNz4Xnzr_20sj4-d1gVUddg-7L8XiFvCV7HpokcBYMzITnBvk3a4kxzEMfA7_MUvvLdQ`,
@@ -143,17 +164,7 @@ export const CAROUSEL_EXPERIENCES = [
     subtitle: 'Descubre experiencias extraordinarias',
     description:
       'Superyates privados, safaris en reservas reales y suites suspendidas sobre el horizonte.',
-    image: IMAGES.dubaiMarina,
-    href: '#destinos',
-  },
-  {
-    id: 'abudhabi',
-    location: 'ABU DHABI — LUJO Y CULTURA',
-    title: 'Grandiosidad e historia inmemorial',
-    subtitle: 'Sede central de Exótica Tours',
-    description:
-      'El Louvre bajo la lluvia de luz, accesos privados a Qasr Al Watan y la majestuosa Gran Mezquita Sheikh Zayed.',
-    image: IMAGES.grandMosque,
+    image: dubai2,
     href: '#destinos',
   },
   {
@@ -162,29 +173,39 @@ export const CAROUSEL_EXPERIENCES = [
     title: 'Dunas infinitas al atardecer',
     subtitle: 'Mística y tradición emiratí',
     description:
-      'Recorrido 4x4 por dunas rojas, campamentos tradicionales beduinos y cenatorios bajo el cielo estrellado.',
-    image: IMAGES.desertSafari,
+      'Recorrido 4x4 por dunas rojas, campamentos tradicionales beduinos y cenas bajo el cielo estrellado.',
+    image: dubai4,
     href: '#experiencias',
   },
   {
-    id: 'qatar',
-    location: 'QATAR — VANGUARDIA & DISEÑO',
-    title: 'Arquitectura y mar interior',
-    subtitle: 'La península del diseño',
+    id: 'burjalarab',
+    location: 'DUBÁI — LUJO EN LA COSTA',
+    title: 'El hotel más icónico del mundo',
+    subtitle: 'Experiencias premium a orillas del mar',
     description:
-      'Travesías al Inland Sea y noches en resorts de ultralujo a orillas del Golfo Pérsico.',
-    image: IMAGES.qatar,
+      'Playas de arena blanca, aguas cristalinas y el Burj Al Arab como telón de fondo de tu historia.',
+    image: dubai5,
     href: '#destinos',
   },
   {
-    id: 'oman',
-    location: 'OMÁN — SULTANATO MÍSTICO',
-    title: 'Fiordos y montañas sagradas',
-    subtitle: 'Paz e intimidad absoluta',
+    id: 'dubaiframe',
+    location: 'DUBÁI — ARQUITECTURA E INNOVACIÓN',
+    title: 'Entre el pasado y el futuro',
+    subtitle: 'Dubai Frame, una ventana al cielo',
     description:
-      'Navegación en dhows tradicionales por los acantilados de Musandam y retiros en Jebel Akhdar.',
-    image: IMAGES.oman,
+      'Un símbolo que une la vieja Dubái con la moderna. Vistas 360° desde el puente de cristal más alto del mundo.',
+    image: dubai6,
     href: '#destinos',
+  },
+  {
+    id: 'jetski',
+    location: 'DUBÁI — AVENTURA EN EL MAR',
+    title: 'Adrenalina frente al Burj Al Arab',
+    subtitle: 'Experiencias acuáticas de lujo',
+    description:
+      'Jet ski, navegación privada y deportes acuáticos con las vistas más espectaculares del skyline de Dubái.',
+    image: dubai7,
+    href: '#experiencias',
   },
 ]
 
@@ -212,8 +233,8 @@ export const TOURS = [
       { icon: 'schedule', text: '8 horas' },
       { icon: 'badge', text: 'Guía certificado + conductor privado' },
     ],
-    image: IMAGES.grandMosque,
-    alt: 'Gran Mezquita Sheikh Zayed iluminada al anochecer',
+    image: dubai6,
+    alt: 'Dubai Frame vista aérea con el skyline al fondo',
     url: 'https://exoticatours.vip/experiences/full-day-de-abu-dhabi-ic%C3%B3nico',
   },
   {
@@ -229,8 +250,8 @@ export const TOURS = [
       { icon: 'schedule', text: 'Medio día' },
       { icon: 'confirmation_number', text: 'Entrada al palacio incluida' },
     ],
-    image: IMAGES.yasMarina,
-    alt: 'Circuito Yas Marina iluminado de noche junto al puerto',
+    image: dubai2,
+    alt: 'Burj Khalifa y Downtown Dubai con escultura corazón',
     url: 'https://exoticatours.vip/experiences/half-day-abu-dhabi-qasr-al-watan-1',
   },
   {
@@ -246,9 +267,9 @@ export const TOURS = [
       { icon: 'schedule', text: 'Medio día' },
       { icon: 'directions_car', text: 'Transporte privado' },
     ],
-    image: IMAGES.grandMosque,
-    imageClass: 'object-[center_80%]',
-    alt: 'Arcos y cúpulas de la Gran Mezquita reflejados en el agua',
+    image: dubai1,
+    imageClass: 'object-center',
+    alt: 'Panorámica de Dubai desde las alturas',
     url: 'https://exoticatours.vip/experiences/half-day-en-abu-dhabi-gran-mezquita',
   },
   {
@@ -264,8 +285,8 @@ export const TOURS = [
       { icon: 'schedule', text: 'Día completo' },
       { icon: 'museum', text: 'Entradas según itinerario' },
     ],
-    image: IMAGES.louvre,
-    alt: 'Galería del Louvre Abu Dhabi bajo su cúpula geométrica',
+    image: dubai3,
+    alt: 'Familia en el túnel del acuario de Dubai Mall',
     url: 'https://exoticatours.vip/experiences/full-day-en-abu-dhabi-cultural',
   },
   {
@@ -281,9 +302,9 @@ export const TOURS = [
       { icon: 'schedule', text: 'Día completo' },
       { icon: 'attractions', text: '1 parque a elegir incluido' },
     ],
-    image: IMAGES.yasMarina,
-    imageClass: 'object-left',
-    alt: 'Isla Yas de noche con el circuito y el puerto iluminados',
+    image: dubai5,
+    imageClass: 'object-top',
+    alt: 'Pareja en la playa frente al Burj Al Arab',
     url: 'https://exoticatours.vip/experiences/full-day-abu-dhabi-parques',
   },
   {
@@ -299,8 +320,8 @@ export const TOURS = [
       { icon: 'schedule', text: 'De 4 horas a 1 día' },
       { icon: 'translate', text: 'Idioma registrado: inglés' },
     ],
-    image: IMAGES.desertSafari,
-    alt: 'Todoterreno clásico en las dunas rojas de Dubái al atardecer',
+    image: dubai4,
+    alt: 'Camellos y beduinos en las dunas del desierto al atardecer',
     url: 'https://exoticatours.vip/experiences/safari-por-el-desierto-en-dubai',
   },
   {
@@ -316,8 +337,8 @@ export const TOURS = [
       { icon: 'schedule', text: 'De 4 horas a 1 día' },
       { icon: 'translate', text: 'Idioma registrado: inglés' },
     ],
-    image: IMAGES.desertLounge,
-    alt: 'Campamento árabe en el desierto con cojines y faroles al anochecer',
+    image: dubai8,
+    alt: 'Aventura en jet ski frente al Burj Al Arab de Dubai',
     url: 'https://exoticatours.vip/experiences/safari-por-el-desierto-en-abu-dabi',
   },
 ]

@@ -133,6 +133,62 @@ export const DESTINATIONS = [
 export const TICKER = ['Abu Dhabi', 'Dubái', 'Qatar', 'Omán', 'Egipto', 'Turquía']
 
 /* ------------------------------------------------------------------ */
+/* Carrusel 3D Hero Experiencias                                      */
+/* ------------------------------------------------------------------ */
+export const CAROUSEL_EXPERIENCES = [
+  {
+    id: 'dubai',
+    location: 'DUBÁI — EMIRATOS ÁRABES UNIDOS',
+    title: 'Viaja de otra manera.',
+    subtitle: 'Descubre experiencias extraordinarias',
+    description:
+      'Superyates privados, safaris en reservas reales y suites suspendidas sobre el horizonte.',
+    image: IMAGES.dubaiMarina,
+    href: '#destinos',
+  },
+  {
+    id: 'abudhabi',
+    location: 'ABU DHABI — LUJO Y CULTURA',
+    title: 'Grandiosidad e historia inmemorial',
+    subtitle: 'Sede central de Exótica Tours',
+    description:
+      'El Louvre bajo la lluvia de luz, accesos privados a Qasr Al Watan y la majestuosa Gran Mezquita Sheikh Zayed.',
+    image: IMAGES.grandMosque,
+    href: '#destinos',
+  },
+  {
+    id: 'safari',
+    location: 'SAFARI EN EL DESIERTO — AVENTURA INOLVIDABLE',
+    title: 'Dunas infinitas al atardecer',
+    subtitle: 'Mística y tradición emiratí',
+    description:
+      'Recorrido 4x4 por dunas rojas, campamentos tradicionales beduinos y cenatorios bajo el cielo estrellado.',
+    image: IMAGES.desertSafari,
+    href: '#experiencias',
+  },
+  {
+    id: 'qatar',
+    location: 'QATAR — VANGUARDIA & DISEÑO',
+    title: 'Arquitectura y mar interior',
+    subtitle: 'La península del diseño',
+    description:
+      'Travesías al Inland Sea y noches en resorts de ultralujo a orillas del Golfo Pérsico.',
+    image: IMAGES.qatar,
+    href: '#destinos',
+  },
+  {
+    id: 'oman',
+    location: 'OMÁN — SULTANATO MÍSTICO',
+    title: 'Fiordos y montañas sagradas',
+    subtitle: 'Paz e intimidad absoluta',
+    description:
+      'Navegación en dhows tradicionales por los acantilados de Musandam y retiros en Jebel Akhdar.',
+    image: IMAGES.oman,
+    href: '#destinos',
+  },
+]
+
+/* ------------------------------------------------------------------ */
 /* Tours (oferta publicada en exoticatours.vip)                        */
 /* ------------------------------------------------------------------ */
 export const TOUR_FILTERS = [

@@ -5,6 +5,7 @@ import { Logo } from './Logo'
 import { Icon } from './ui'
 
 const NAV_IDS = NAV_LINKS.map((l) => l.id)
+const ALL_LINKS = [...NAV_LINKS, { id: 'corporativo', label: 'Corporativo / B2B' }]
 
 export default function Header() {
   const [open, setOpen] = useState(false)
@@ -73,29 +74,91 @@ export default function Header() {
             Diseñar mi viaje
           </a>
 
+          {/* ── Botón hamburger animado ── */}
           <button
             type="button"
-            className="flex size-10 items-center justify-center border border-line text-ink transition-colors hover:border-gold hover:text-gold lg:hidden"
+            className="relative flex size-10 items-center justify-center border border-line text-ink transition-colors hover:border-gold hover:text-gold lg:hidden"
             aria-expanded={open}
             aria-controls="mobile-menu"
             aria-label={open ? 'Cerrar menú' : 'Abrir menú'}
             onClick={() => setOpen((v) => !v)}
           >
-            <Icon name={open ? 'close' : 'menu'} />
+            <span className="sr-only">{open ? 'Cerrar menú' : 'Abrir menú'}</span>
+            {/* SVG con 3 barras que se transforman en X */}
+            <svg
+              width="20"
+              height="14"
+              viewBox="0 0 20 14"
+              fill="none"
+              aria-hidden="true"
+              className="overflow-visible"
+            >
+              {/* Barra superior → rota +45° */}
+              <rect
+                x="0" y="1" width="20" height="1.5"
+                fill="currentColor"
+                rx="0.75"
+                style={{
+                  transformOrigin: '10px 1.75px',
+                  transition: 'transform 0.38s cubic-bezier(0.22,1,0.36,1)',
+                  transform: open ? 'translateY(5.25px) rotate(45deg)' : 'none',
+                }}
+              />
+              {/* Barra media → se desvanece y encoge */}
+              <rect
+                x="0" y="6.25" width="20" height="1.5"
+                fill="currentColor"
+                rx="0.75"
+                style={{
+                  transformOrigin: '10px 7px',
+                  transition: 'opacity 0.22s ease, transform 0.38s cubic-bezier(0.22,1,0.36,1)',
+                  opacity: open ? 0 : 1,
+                  transform: open ? 'scaleX(0.4)' : 'none',
+                }}
+              />
+              {/* Barra inferior → rota -45° */}
+              <rect
+                x="0" y="11.5" width="20" height="1.5"
+                fill="currentColor"
+                rx="0.75"
+                style={{
+                  transformOrigin: '10px 12.25px',
+                  transition: 'transform 0.38s cubic-bezier(0.22,1,0.36,1)',
+                  transform: open ? 'translateY(-5.25px) rotate(-45deg)' : 'none',
+                }}
+              />
+            </svg>
           </button>
         </div>
       </div>
 
-      {/* Menú móvil */}
+      {/* ── Menú móvil con animación suave ── */}
       <div
         id="mobile-menu"
-        hidden={!open}
-        className="border-t border-line bg-cream lg:hidden"
+        role="region"
+        aria-label="Menú de navegación"
+        className="overflow-hidden border-t border-line bg-cream lg:hidden"
+        style={{
+          maxHeight: open ? '600px' : '0px',
+          opacity: open ? 1 : 0,
+          transition: open
+            ? 'max-height 0.52s cubic-bezier(0.22,1,0.36,1), opacity 0.3s ease 0.05s'
+            : 'max-height 0.38s cubic-bezier(0.55,0,1,0.45), opacity 0.22s ease',
+        }}
       >
         <nav aria-label="Principal (móvil)" className="px-5 pt-2 pb-6 md:px-10">
           <ul className="divide-y divide-line">
-            {[...NAV_LINKS, { id: 'corporativo', label: 'Corporativo / B2B' }].map((link) => (
-              <li key={link.id}>
+            {ALL_LINKS.map((link, i) => (
+              <li
+                key={link.id}
+                style={{
+                  opacity: open ? 1 : 0,
+                  transform: open ? 'translateX(0)' : 'translateX(-12px)',
+                  transition: open
+                    ? `opacity 0.35s ease ${0.08 + i * 0.055}s, transform 0.4s cubic-bezier(0.22,1,0.36,1) ${0.08 + i * 0.055}s`
+                    : 'opacity 0.15s ease, transform 0.15s ease',
+                }}
+              >
                 <a
                   href={`#${link.id}`}
                   onClick={() => setOpen(false)}
@@ -109,7 +172,17 @@ export default function Header() {
               </li>
             ))}
           </ul>
-          <div className="mt-6 grid gap-3 sm:grid-cols-2">
+
+          <div
+            className="mt-6 grid gap-3 sm:grid-cols-2"
+            style={{
+              opacity: open ? 1 : 0,
+              transform: open ? 'translateY(0)' : 'translateY(10px)',
+              transition: open
+                ? `opacity 0.35s ease ${0.08 + ALL_LINKS.length * 0.055}s, transform 0.4s cubic-bezier(0.22,1,0.36,1) ${0.08 + ALL_LINKS.length * 0.055}s`
+                : 'opacity 0.15s ease',
+            }}
+          >
             <a href="#contacto" onClick={() => setOpen(false)} className="btn-primary">
               Diseñar mi viaje
             </a>

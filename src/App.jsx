@@ -7,13 +7,13 @@ import Footer from './components/Footer'
 import Founders from './components/Founders'
 import Header from './components/Header'
 import Hero from './components/Hero'
+import HeroVideo from './components/HeroVideo'
 import Included from './components/Included'
 import Intro from './components/Intro'
 import SafariSpotlight from './components/SafariSpotlight'
 import Services from './components/Services'
 import Testimonials from './components/Testimonials'
 import Tours from './components/Tours'
-import VideoSection from './components/VideoSection'
 
 export default function App() {
   const [selectedTour, setSelectedTour] = useState(null)
@@ -30,8 +30,8 @@ export default function App() {
     <div className="min-h-screen bg-cream font-sans text-ink antialiased">
       <Header />
       <main id="main-content">
+        <HeroVideo />
         <Hero />
-        <VideoSection />
         <Intro />
         <Destinations />
         <Tours onRequest={handleTourRequest} />

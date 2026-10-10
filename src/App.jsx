@@ -34,8 +34,8 @@ export default function App() {
         <Hero />
         <Intro />
         <Destinations />
-        <Tours onRequest={handleTourRequest} />
         <SafariSpotlight />
+        <Tours onRequest={handleTourRequest} />
         <Services />
         <Included />
         <Corporate />
